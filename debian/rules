@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+SC_VERSION=3.8.0
+SC_DIR=sc3-plugins
+SC_BUILD_DIR=$(SC_DIR)/build
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	git clone https://github.com/supercollider/sc3-plugins.git
+	cd $(SC_DIR) && git checkout Version-$(SC_VERSION)
+	cd $(SC_DIR) && git submodule init
+	cd $(SC_DIR) && git submodule update
+	mkdir -p $(SC_BUILD_DIR)
+	cp -r $(SC_DIR)/external_libraries/nova-simd/* $(SC_DIR)/source/VBAPUGens
+	cd $(SC_BUILD_DIR) && cmake -DSC_PATH=/usr/include/SuperCollider -DCMAKE_INSTALL_PREFIX=../../debian/sc3-plugins-sonicpi/usr/ -DCMAKE_BUILD_TYPE=Release ..
+	cd $(SC_BUILD_DIR) && make -j $(shell nproc)
+
+override_dh_auto_install:
+	cd $(SC_BUILD_DIR) && make install
+

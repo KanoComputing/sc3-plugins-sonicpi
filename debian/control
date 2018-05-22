@@ -1,0 +1,22 @@
+Source: sc3-plugins-sonicpi
+Maintainer: Team Kano <dev@kano.me>
+Section: libs
+Priority: optional
+Standards-Version: 3.9.4
+Build-Depends:
+    debhelper (>=9.0.0),
+    build-essential,
+    g++,
+    cmake,
+    make,
+    libfftw3-dev,
+    supercollider-sonicpi
+
+Package: sc3-plugins-sonicpi
+Architecture: all
+Depends:
+    ${misc:Depends},
+    libfftw3-3,
+    supercollider-sonicpi
+Description: Supercollider Plugins required for Sonic Pi
+ Debian packaging of the version of Supercollider Plugins required for Sonic Pi.

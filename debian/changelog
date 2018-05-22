@@ -1,0 +1,5 @@
+sc3-plugins-sonicpi (3.8.0-0) unstable; urgency=low
+
+  * Packaging of Supercollider Plugins 3.8.0 required for Sonic Pi
+
+ -- Team Kano <dev@kano.me>  Tue, 22 May 2018 11:20:00 +0000
