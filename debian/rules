@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-SC_VERSION=3.8.0
+SC_VERSION=3.9.0
 SC_DIR=sc3-plugins
 SC_BUILD_DIR=$(SC_DIR)/build
 

@@ -10,13 +10,13 @@ Build-Depends:
     cmake,
     make,
     libfftw3-dev,
-    supercollider-sonicpi
+    supercollider-sonicpi (= ${binary:Version})
 
 Package: sc3-plugins-sonicpi
 Architecture: all
 Depends:
     ${misc:Depends},
     libfftw3-3,
-    supercollider-sonicpi
+    supercollider-sonicpi (= ${binary:Version})
 Description: Supercollider Plugins required for Sonic Pi
  Debian packaging of the version of Supercollider Plugins required for Sonic Pi.
